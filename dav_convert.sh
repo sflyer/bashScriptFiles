@@ -1,6 +1,6 @@
 #!/bin/bash
-rm /home/OSPK/chirkov/videos.txt
-touch /home/OSPK/chirkov/videos.txt
+rm $HOME/videos.txt
+touch $HOME/videos.txt
 search_dir=$1
 save_dir=$2
 max=$3
@@ -24,10 +24,10 @@ fi
 	do
  	 j=$((j+1))
 	 
- 	 echo "file '"$save_dir"/"$j".mp4'" >> /home/OSPK/chirkov/videos.txt
+ 	 echo "file '"$save_dir"/"$j".mp4'" >> $HOME/videos.txt
 	done
 #собираем их в одно видео
-	ffmpeg -f concat -safe 0 -i /home/OSPK/chirkov/videos.txt -c copy full-video-$date.mp4
+	ffmpeg -f concat -safe 0 -i $HOME/videos.txt -c copy full-video-$date.mp4
 	exit 1
 
 
